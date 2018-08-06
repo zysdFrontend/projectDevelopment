@@ -1,0 +1,59 @@
+.noSelect {
+  -webkit-user-select: none;
+  user-select: none;
+}
+* {
+  box-sizing: border-box;
+  position: relative;
+  font-family: Helvetica, Arial, sans-serif;
+}
+html,
+body,
+ul,
+li,
+p,
+span,
+img {
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+a,
+span,
+input,
+button,
+.btn {
+  text-decoration: none;
+  outline: none;
+}
+a:hover,
+span:hover,
+input:hover,
+button:hover,
+.btn:hover,
+a:active,
+span:active,
+input:active,
+button:active,
+.btn:active,
+a:focus,
+span:focus,
+input:focus,
+button:focus,
+.btn:focus,
+a:focus:active,
+span:focus:active,
+input:focus:active,
+button:focus:active,
+.btn:focus:active {
+  text-decoration: none;
+  outline: none;
+}
+ul,
+li {
+  list-style: none;
+}
