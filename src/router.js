@@ -10,6 +10,7 @@ const role = () => import(/* webpackChunkName: "role" */ './pages/role.vue');
 const timer = () => import(/* webpackChunkName: "timer" */ './pages/timer.vue');
 const sys_param = () => import(/* webpackChunkName: "sys_param" */ './pages/sys_param.vue');
 const dictionary = () => import(/* webpackChunkName: "dictionary" */ './pages/dictionary.vue');
+const api = () => import(/* webpackChunkName: "api" */ './pages/api.vue');
 
 const routes = [
     { path: '/home', component: home },
@@ -18,7 +19,8 @@ const routes = [
 	{ path: '/role', component: role },
 	{ path: '/timer', component: timer },
 	{ path: '/dictionary', component: dictionary },
-	{ path: '/sys_param', component: sys_param }
+	{ path: '/sys_param', component: sys_param },
+	{ path: '/api', component: api }
 ];
 
 const router = new VueRouter({

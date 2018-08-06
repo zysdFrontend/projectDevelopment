@@ -1,0 +1,10 @@
+ 
+<my-table url="json/table.json" :click-to-select="true" :striped="true" :pagination="true">
+    <column :checkbox="true"></column>
+    <column title="项目编号" field="projectCode"></column>
+    <column title="项目名称" field="projectName"></column>
+    <column title="融资金额" field="money"></column>
+    <column title="融资期限" field="deadLine"></column>
+    <column title="项目经理" field="manager"></column>
+    <column title="申请时间" field="createTime"></column>
+</my-table>

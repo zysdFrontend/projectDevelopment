@@ -84,6 +84,11 @@ export default {
 				icon: 'fa fa-sliders',
 				name: '系统参数',
 				url: 'sys_param'
+			},{
+				id: 7,
+				icon: 'fa fa-code',
+				name: '前端框架使用文档',
+				url: 'api'
 			}]
 		}
 	},
