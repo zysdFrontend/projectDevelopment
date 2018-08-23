@@ -1,11 +1,13 @@
 <template>
     <div :id="id" class="input-group" :class="['input-group-'+size,myClass]">
         <span class="input-group-addon" :id="'label_'+id" v-text="label"></span>
+
         <input v-validate="validate" :name="name" :type="type" class="form-control" :placeholder="setPlaceholder" :aria-describedby="'label_'+id">
+
         <span class="errMsg" v-show="errors.has(name)">{{ errors.first(name) }}</span>
         <span v-if="unit" class="input-group-addon unit" v-text="unit"></span>
-        <span class="input-group-btn">
-            <slot name="behind"></slot>
+        <span v-if="$slots['buttons']" class="input-group-btn">
+            <slot name="buttons"></slot>
         </span>
     </div>
 </template>
@@ -35,8 +37,7 @@ export default {
         size: {
             default: ''
         },
-        unit: {},
-        name: {}
+        unit: {}
     },
     computed: {
         setPlaceholder: function(){
@@ -59,6 +60,7 @@ export default {
 
 <style lang="less" scoped>
 .input-group{
+    margin-bottom: 15px;
     .unit{
         border-left: 0px;
     }

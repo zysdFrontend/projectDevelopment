@@ -1,2 +1,13 @@
 
-<datepicker placeholder="请选择"></datepicker>
+<datetimepicker label="日期选择框"></datetimepicker>                       
+<datetimepicker label="无清除按钮" :allow-clear="false"></datetimepicker>
+<datetimepicker label="可选择时间" dateFormat="Y-m-d H:i" :enableTime="true"></datetimepicker>                        
+<datetimepicker label="可选择时间秒" dateFormat="Y-m-d H:i:S" :enableTime="true" :enableSeconds="true"></datetimepicker>                        
+<datetimepicker label="可选择时间(24小时制)" dateFormat="Y-m-d H:i" :time_24hr="true" :enableTime="true"></datetimepicker>                        
+<datetimepicker label="设置最小日期" minDate="2018-07-20"></datetimepicker>                        
+<datetimepicker label="设置最大日期" maxDate="2018-08-30"></datetimepicker>                        
+<datetimepicker label="禁止某些日期" :disable="['2018-08-30','2018-08-20',{from: '2018-07-01',to: '2018-07-20'}]"></datetimepicker>
+<datetimepicker label="仅放开某些日期" :enable="['2018-08-30','2018-08-20',{from: '2018-07-01',to: '2018-07-20'}]"></datetimepicker>
+<datetimepicker label="日期多选" mode="multiple"></datetimepicker>
+<datetimepicker label="选择日期范围" mode="range"></datetimepicker>
+<datetimepicker label="只选择时间" dateFormat="H:i" :enableTime="true" :noCalendar="true"></datetimepicker>

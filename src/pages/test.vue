@@ -1,16 +1,12 @@
 <template>
     <div>
-        <h1>用户管理</h1>
-        <test></test>
+        <h1>test</h1>
     </div>
 </template>
 
 <script>
-import test from './test.vue';
 export default {
-    components: {
-        test
-    }
+
 }
 </script>
 

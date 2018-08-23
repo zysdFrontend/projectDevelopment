@@ -106,14 +106,15 @@ export default {
 <style lang="less" scoped>
 @import './styles/init.less';
 #MYAPP{
-	height: 100%;
+    min-height: 100%;
 	width: 100%;
 	overflow: hidden;
 	padding-top: @topHeight;
 	padding-left: @leftWidth;
 	background-color: @gray;
 	.header{
-		position: absolute;
+        position: fixed;
+        z-index: 99999999;
 		width: 100%;
 		height: @topHeight;
 		top: 0px;
@@ -190,7 +191,8 @@ export default {
 		}
 	}
 	.leftMenus{
-		position: absolute;
+		position: fixed;
+        z-index: 99999999;
 		background-color: @deepGray;
 		width: @leftWidth;
 		bottom: 0px;
