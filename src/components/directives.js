@@ -1,21 +1,21 @@
 import Vue from 'vue'
 
 export default (Vue)=>{
-    Vue.directive('tooltip',{//工具气泡提示
-        inserted: function (el,binding){
-            var defaultOpts = {
-                container: 'body',
-                dalay: 0,
-                html: false,
-                placement: "top",
-                title: '',
-                trigger: 'hover focus'
-            }
-            if(binding.value)
-                $.extend(defaultOpts,binding.value);
-            $(el).tooltip(defaultOpts);
-        }
-    });
+    // Vue.directive('tooltip',{//工具气泡提示
+    //     inserted: function (el,binding){
+    //         var defaultOpts = {
+    //             container: 'body',
+    //             dalay: 0,
+    //             html: false,
+    //             placement: "top",
+    //             title: '',
+    //             trigger: 'hover focus'
+    //         }
+    //         if(binding.value)
+    //             $.extend(defaultOpts,binding.value);
+    //         $(el).tooltip(defaultOpts);
+    //     }
+    // });
 
     Vue.directive('contextmenu',{//工具气泡提示
         inserted: function (el,binding){

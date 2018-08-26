@@ -37,32 +37,28 @@
                     <h4>文本框 - textbox</h4>
                 </div>
                 <div class="example">
-                    <p>普通大小：</p>
-                    <textbox label="用户名"></textbox>
-                    <p>小型：</p>
-                    <textbox label="用户名" size="sm"></textbox>
-                    <p>大型：</p>
-                    <textbox label="用户名" size="lg"></textbox>
-                    <p>密码类型：</p>
-                    <textbox label="用户名" type="password"></textbox>
-                    <p>占六分之一：</p>
-                    <textbox label="用户名" my-class="col-xs-2"></textbox>
-                    <p>占四分之一：</p>
-                    <textbox label="用户名" my-class="col-xs-3"></textbox>
-                    <p>占三分之一：</p>
-                    <textbox label="用户名" my-class="col-xs-4"></textbox>
-                    <p>占二分之一：</p>
-                    <textbox label="用户名" my-class="col-xs-6"></textbox>
-                    <p>占三分之二：</p>
-                    <textbox label="用户名" my-class="col-xs-9"></textbox>
-                    <p>占100%：</p>
-                    <textbox label="用户名" my-class="col-xs-12"></textbox>
-                    <p>有单位：</p>
-                    <textbox label="金额" my-class="col-xs-12" unit="万元"></textbox>
-                    <p>有按钮：</p>
-                    <textbox label="试试点右侧按钮" my-class="col-xs-12">
-                        <button class="btn btn-default" type="button" slot="buttons">点我啊！</button>
-                    </textbox>
+                    <div class="formDiv_2">
+                        <textbox label="默认文本框"></textbox>
+
+                        <textbox label="带单位" unit="万元"></textbox>
+
+                        <textbox label="带按钮">
+                            <b-btn @click="alert" variant="secondary" slot="append">点我试试</b-btn>
+                        </textbox>
+
+                        <textbox label="带下拉选项">
+                            <b-dropdown text="选项" variant="secondary" slot="append">
+                                <b-dropdown-item>打开项目</b-dropdown-item>
+                                <b-dropdown-item>打开流程</b-dropdown-item>
+                            </b-dropdown>
+                        </textbox>
+
+                        <textbox label="数字框" type="number"></textbox>
+
+                        <textbox label="小型文本框" size="sm"></textbox>
+
+                        <textbox label="小型文本框" size="lg"></textbox>
+                    </div>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_textbox">
@@ -77,11 +73,11 @@
                     <h4>下拉框 - combobox</h4>
                 </div>
                 <div class="example">
-                    <combobox id="combobox_1" width="250px" :data="[{'id':'1','text':'1'},{'id':'2','text':'2'}]"></combobox>
-                    <br/><br/>
-                    <combobox id="combobox_2" width="180px" :data="[{'id':'1','text':'1'},{'id':'2','text':'2'}]" :extend-option="{minimumResultsForSearch:1}"></combobox>
-                    <br/><br/>
-                    <combobox id="combobox_3" width="180px" url="json/combobox.json" :extend-option="{minimumResultsForSearch:1}"></combobox>
+                    <combobox label="下拉框" :options="[{'value':'1','text':'1'},{'value':'2','text':'2'}]"></combobox>
+                    <br/>
+                    <combobox label="可搜索" :options="[{'value':'1','text':'1'},{'value':'2','text':'2'}]" :extend-option="{minimumResultsForSearch:1}"></combobox>
+                    <br/>
+                    <combobox label="远程加载数据" url="json/combobox.json" :extend-option="{minimumResultsForSearch:1}"></combobox>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_combobox">
@@ -122,47 +118,56 @@
                     <h4>按钮 - my-button</h4>
                 </div>
                 <div class="example">
-                    <my-button size="xs" text="超小按钮"></my-button>
-                    <my-button size="sm" text="小按钮"></my-button>
-                    <my-button text="默认尺寸按钮"></my-button>
-                    <my-button size="lg" text="大按钮"></my-button>
-                    <br><br>
-                    <my-button :block="true" text="整栏按钮"></my-button>
-                    <br>
-                    <my-button text="蓝色按钮" button-type="primary"></my-button>
-                    <my-button text="绿色按钮" button-type="success"></my-button>
-                    <my-button text="浅蓝色按钮" button-type="info"></my-button>
-                    <my-button text="黄色按钮" button-type="warning"></my-button>
-                    <my-button text="红色按钮" button-type="danger"></my-button>
-                    <br><br>
-                    <my-button text="禁用按钮" button-type="primary" :disabled="true"></my-button>
-                    <br><br>
-                    <button-group>
-                        <my-button text="按钮1"></my-button>
-                        <my-button text="按钮2"></my-button>
-                        <my-button text="按钮3" button-type="primary"></my-button>
-                        <my-button text="按钮4" button-type="success"></my-button>
-                        <my-button text="按钮5" button-type="warning"></my-button>
-                        <my-button text="按钮6" button-type="danger"></my-button>
-                    </button-group>
-                    <br><br>
-                    <button-group>
-                        <my-button text="按钮下拉菜单" dropdown="true"></my-button>
-                        <ul class="dropdown-menu">
-                            <li><a>菜单一</a></li>
-                            <li><a>菜单二</a></li>
-                            <li><a>菜单三</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a>菜单四</a></li>
-                        </ul>
-                    </button-group>
-
+                    <b-btn variant="primary">primary</b-btn>
+                    <b-btn variant="secondary">secondary</b-btn>
+                    <b-btn variant="success">success</b-btn>
+                    <b-btn variant="warning">warning</b-btn>
+                    <b-btn variant="danger">danger</b-btn>
+                    <b-btn variant="info">info</b-btn>
+                    <b-btn variant="light">light</b-btn>
+                    <b-btn variant="dark">dark</b-btn>
+                    <br/><br/>
+                    <b-btn variant="outline-primary">primary</b-btn>
+                    <b-btn variant="outline-secondary">secondary</b-btn>
+                    <b-btn variant="outline-success">success</b-btn>
+                    <b-btn variant="outline-warning">warning</b-btn>
+                    <b-btn variant="outline-danger">danger</b-btn>
+                    <b-btn variant="outline-info">info</b-btn>
+                    <b-btn variant="outline-light">light</b-btn>
+                    <b-btn variant="outline-dark">dark</b-btn>
+                    <br/><br/>
+                    <b-btn variant="primary" size="sm">小型按钮</b-btn>
+                    <b-btn variant="primary" size="lg">大型按钮</b-btn>
+                    <b-btn variant="primary" disabled>禁用按钮</b-btn>
+                    <br/><br/>
+                    <b-btn variant="outline-secondary" block>通栏按钮</b-btn>
+                    <br/><br/>
+                    <b-dropdown right text="下拉按钮">
+                        <b-dropdown-item>选项1</b-dropdown-item>
+                        <b-dropdown-item>选项2</b-dropdown-item>
+                        <b-dropdown-divider></b-dropdown-divider>
+                        <b-dropdown-item>选项3</b-dropdown-item>
+                    </b-dropdown>
+                    <br/><br/>
+                    <b-button-group>
+                        <b-button>按钮组1</b-button>
+                        <b-button>按钮组2</b-button>
+                        <b-button>按钮组3</b-button>
+                        <b-button>按钮组4</b-button>
+                        <b-button>按钮组5</b-button>
+                    </b-button-group>
+                    <br/><br/>
+                    <b-button-group vertical>
+                        <b-button>垂直按钮组1</b-button>
+                        <b-button>垂直按钮组2</b-button>
+                        <b-button>垂直按钮组3</b-button>
+                    </b-button-group>
                 </div>
                 <pre class="language-markup">
-                        <code v-html="code_myButton">
-                            
-                        </code>
-                    </pre>
+                    <code v-html="code_myButton">
+                        
+                    </code>
+                </pre>
             </div>
 
 
@@ -171,11 +176,10 @@
                     <h4>导航栏 - navigation</h4>
                 </div>
                 <div class="example">
-                    <navigation :navi-data="naviData" :click="naviClick"></navigation>
+                    <b-breadcrumb :items="[{text: 'XX集团',href: '#'}, {text: 'XX公司',href: '#'}, {text: 'XX部门',active: true}]"/>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_navigation">
-                            
                         </code>
                     </pre>
             </div>
@@ -186,17 +190,63 @@
                     <h4>选项卡 - tab</h4>
                 </div>
                 <div class="example">
-                    <tab>
-                        <tab-panel :active="true" name="home" title="首页">
-                            <div>首页</div>
-                        </tab-panel>
-                        <tab-panel name="myProject" title="我的项目">
-                            <div>我的项目</div>
-                        </tab-panel>
-                        <tab-panel name="projectCenter" title="项目中心">
-                            <div>项目中心</div>
-                        </tab-panel>
-                    </tab>
+                    <p>默认选项卡：</p>
+                    <b-tabs>
+                        <b-tab title="页签1" active>
+                            <p class="my-3">内容1</p>
+                        </b-tab>
+                        <b-tab title="页签2" >
+                            <p class="my-3">内容2</p>
+                        </b-tab>
+                        <b-tab title="禁用页签" disabled>
+                            <p class="my-3">内容3</p>
+                        </b-tab>
+                    </b-tabs>
+                    <br><br>
+                    <p>卡片选项卡：</p>
+                    <b-card no-body>
+                        <b-tabs card>
+                            <b-tab title="页签1" active>
+                                内容1
+                            </b-tab>
+                            <b-tab title="页签2" >
+                                内容2
+                            </b-tab>
+                            <b-tab title="禁用页签" disabled>
+                                内容3
+                            </b-tab>
+                        </b-tabs>
+                    </b-card>
+                    <br><br>
+                    <p>胶囊选项卡：</p>
+                    <b-card no-body>
+                        <b-tabs pills card>
+                            <b-tab title="页签1" active>
+                                内容1
+                            </b-tab>
+                            <b-tab title="页签2" >
+                                内容2
+                            </b-tab>
+                            <b-tab title="禁用页签" disabled>
+                                内容3
+                            </b-tab>
+                        </b-tabs>
+                    </b-card>
+                    <br><br>
+                    <p>垂直选项卡：</p>
+                    <b-card no-body>
+                        <b-tabs pills vertical small card>
+                            <b-tab title="页签1" active>
+                                内容1
+                            </b-tab>
+                            <b-tab title="页签2" >
+                                内容2
+                            </b-tab>
+                            <b-tab title="禁用页签" disabled>
+                                内容3
+                            </b-tab>
+                        </b-tabs>
+                    </b-card>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_tab">
@@ -211,20 +261,35 @@
                     <h4>模态框 - modal</h4>
                 </div>
                 <div class="example">
-                    <my-button text="点击打开模态框" data-toggle="modal" data-target="#myModal"></my-button>
-                    <br><br>
-                    <my-button text="点击打开远程加载模态框" data-toggle="modal" data-target="#myModal_2"></my-button>
-                    <br><br>
-                    <my-button text="打开才加载内容" data-toggle="modal" data-target="#myModal_3"></my-button>
-                    <modal title="模态框" id="myModal" :buttons="modalButtons">
-                        <p>阿萨德法师打发</p>
-                        <p>阿萨德法师打发</p>
-                        <p>阿萨德法师打发</p>
-                        <p>阿萨德法师打发</p>
-                        <p>阿萨德法师打发</p>
-                    </modal>
-                    <modal title="模态框2" id="myModal_2" :buttons="modalButtons" url="json/test.html"></modal>
-                    <modal title="模态框3" id="myModal_3" :buttons="modalButtons" url="json/test.html" :lazyload="true"></modal>
+                    <b-btn v-b-modal.modal1>打开模态框</b-btn>
+                    <b-modal id="modal1" title="标题">
+                        <p class="my-4">Hello!</p>
+                    </b-modal>
+                    <br/>
+                    <b-btn v-b-modal.modal2>隐藏底部按钮的模态框</b-btn>
+                    <b-modal id="modal2" title="标题" hide-footer>
+                        <p class="my-4">Hello!</p>
+                    </b-modal>
+                    <br/>
+                    <b-btn v-b-modal.modal3>小型模态框</b-btn>
+                    <b-modal id="modal3" title="标题" size="sm">
+                        <p class="my-4">Hello!</p>
+                    </b-modal>
+                    <br/>
+                    <b-btn v-b-modal.modal4>大型模态框</b-btn>
+                    <b-modal id="modal4" title="标题" size="lg">
+                        <p class="my-4">Hello!</p>
+                    </b-modal>
+                    <br/>
+                    <b-btn v-b-modal.modal4>居中模态框</b-btn>
+                    <b-modal id="modal4" title="标题" centered>
+                        <p class="my-4">Hello!</p>
+                    </b-modal>
+                    <br/>
+                    <b-btn v-b-modal.modal5>懒加载模态框</b-btn>
+                    <b-modal id="modal5" title="标题" centered :lazy="true">
+                        <p class="my-4">Hello!</p>
+                    </b-modal>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_modal">
@@ -239,15 +304,10 @@
                     <h4>工具提示 - tooltip</h4>
                 </div>
                 <div class="example">
-                    <a href="javascript:void(0)" v-tooltip title="悬停提示框内容...">鼠标移上去试试</a>
-                    <br>
-                    <a href="javascript:void(0)" v-tooltip="{placement:'bottom'}" title="悬停提示框内容...">下方显示</a>
-                    <br>
-                    <a href="javascript:void(0)" v-tooltip="{placement:'left'}" title="悬停提示框内容...">左侧显示</a>
-                    <br>
-                    <a href="javascript:void(0)" v-tooltip="{placement:'right'}" title="悬停提示框内容...">右侧显示</a>
-                    <br>
-                    <a href="javascript:void(0)" v-tooltip="{html:true}" title="<h1>123</h1><p>abc</p>">显示html内容</a>
+                    <b-btn v-b-tooltip.hover title="提示信息" variant="outline-primary">默认方位</b-btn>
+                    <b-btn v-b-tooltip.hover.right title="提示信息" variant="outline-primary">右侧方位</b-btn>
+                    <b-btn v-b-tooltip.hover.left title="提示信息" variant="outline-primary">左侧方位</b-btn>
+                    <b-btn v-b-tooltip.hover.bottom title="提示信息" variant="outline-primary">底部方位</b-btn>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_tooltip">
@@ -262,10 +322,10 @@
                     <h4>复选框 - checkbox</h4>
                 </div>
                 <div class="example">
-                    <checkbox label="苹果" name="fruit" value="apple"></checkbox>
-                    <checkbox label="芒果" name="fruit" value="mongo" :disabled="true"></checkbox>
-                    <checkbox label="香蕉" name="fruit" value="banana"></checkbox>
-                    <checkbox label="柠檬" name="fruit" value="lemon" :checked="true"></checkbox>
+                    <b-form-checkbox v-model="checkboxValue" value="apple" unchecked-value="">apple</b-form-checkbox>
+                    <b-form-checkbox v-model="checkboxValue2" value="banana" unchecked-value="">banana</b-form-checkbox>
+                    <b-form-checkbox v-model="checkboxValue3" value="orange" unchecked-value="">orange</b-form-checkbox>
+                    <p class="my-2">你的选择是：{{checkboxValue}}{{checkboxValue2}}{{checkboxValue3}}</p>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_checkbox">
@@ -280,10 +340,12 @@
                     <h4>单选框 - radio</h4>
                 </div>
                 <div class="example">
-                    <radio label="苹果" name="fruit" value="apple"></radio>
-                    <radio label="芒果" name="fruit" value="mongo" :disabled="true"></radio>
-                    <radio label="香蕉" name="fruit" value="banana"></radio>
-                    <radio label="柠檬" name="fruit" value="lemon" :checked="true"></radio>
+                    <b-form-radio-group v-model="radioValue" name="myRadio">
+                        <b-form-radio value="apple">apple</b-form-radio>
+                        <b-form-radio value="banana">banana</b-form-radio>
+                        <b-form-radio value="orange">orange</b-form-radio>
+                    </b-form-radio-group>
+                    <p class="my-2">你的选择是：{{radioValue}}</p>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_radio">
@@ -311,11 +373,9 @@
                     <h4>验证 - validate</h4>
                 </div>
                 <div class="example">
-                    <div class="row">
-                        <textbox validate="email" name="email" my-class="col-xs-6" label="邮箱地址"></textbox>
-                        <br/><br/>
-                        <textbox validate="numeric" name="numeric" my-class="col-xs-6" label="手机"></textbox>
-                    </div>
+                    <textbox validate="email" name="email" label="邮箱地址"></textbox>
+                    <br/>
+                    <textbox validate="numeric" name="numeric" label="手机"></textbox>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_validate">
@@ -330,7 +390,7 @@
                 </div>
                 <div class="example">
                     <div class="row">
-                        <my-button text="右键试试" v-contextmenu="{target:'#dropdown_1'}"></my-button>
+                        <b-btn variant="primary" v-contextmenu="{target:'#dropdown_1'}">右键试试</b-btn>
                         <dropdown-menu id="dropdown_1" :options="dropdownMenuOptions"></dropdown-menu>
                     </div>
                 </div>
@@ -341,17 +401,20 @@
                     </pre>
             </div>
 
-            <div id="panel_numberbox" class="component_panel">
+            <div id="panel_treeselect" class="component_panel">
                 <div class="title">
-                    <h4>数字框 - numberbox</h4>
+                    <h4>下拉树 - treeselect</h4>
                 </div>
                 <div class="example">
-                    <numberbox></numberbox>
+                    <combotree label="下拉树" :options="treeselectOptions"></combotree>
+                    <br/>
+                    <combotree label="多选下拉树" :options="treeselectOptions" :multiple="true"></combotree>
+                    <!-- <p class="my-2">你的选择是：{{treeselectValue}}</p> -->
                 </div>
                 <pre class="language-markup">
-                        <code v-html="code_numberbox">
+                        <!-- <code v-html="code_treeselect">
                             
-                        </code>
+                        </code> -->
                     </pre>
             </div>
         </div>
@@ -359,7 +422,6 @@
 </template>
 
 <script>
-
 import Code_myTable from "./../code/myTable.html";
 import Code_textbox from "./../code/textbox.html";
 import Code_checkbox from "./../code/checkbox.html";
@@ -396,6 +458,11 @@ export default {
       code_tooltip: Code_tooltip,
       code_tree: Code_tree,
       code_validate: Code_validate,
+      checkboxValue: '',
+      checkboxValue2: '',
+      checkboxValue3: '',
+      radioValue: '',
+      treeselectValue: '',
       dropdownMenuOptions: [
         {
           name: "菜单一",
@@ -517,8 +584,8 @@ export default {
         },
         {
           id: "14",
-          name: "数字框(numberbox)",
-          page: "numberbox"
+          name: "下拉树(treeselect)",
+          page: "treeselect"
         }
       ],
       naviData: [
@@ -535,31 +602,29 @@ export default {
           name: "我的项目"
         }
       ],
-      modalButtons: [
-        {
-          name: "保存",
-          click: 'alert("保存")',
-          buttonType: "primary",
-          icon: "glyphicon glyphicon-floppy-saved"
-        },
-        {
-          name: "提交",
-          click: 'alert("提交")',
-          buttonType: "primary",
-          icon: "glyphicon glyphicon-ok"
-        },
-        {
-          name: "重置",
-          click: 'alert("重置")'
-        },
-        {
-          name: "关闭",
-          click: 'alert("关闭")'
-        }
-      ]
+      treeselectOptions: [ {
+          id: 'a',
+          label: 'a',
+          children: [ {
+            id: 'aa',
+            label: 'aa',
+          }, {
+            id: 'ab',
+            label: 'ab',
+          } ],
+        }, {
+          id: 'b',
+          label: 'b',
+        }, {
+          id: 'c',
+          label: 'c',
+        } ]
     };
   },
   methods: {
+    alert: function() {
+      alert(123);
+    },
     naviClick: function(id, name) {
       alert(id);
       alert(name);
@@ -591,7 +656,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../styles/init.less';
+@import "../styles/init.less";
 #api {
   height: 100%;
   width: 100%;

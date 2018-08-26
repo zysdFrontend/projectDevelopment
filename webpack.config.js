@@ -27,8 +27,12 @@ const config = {
 			},
 			{
 				test: /\.js$/,
+                include: [
+                    path.resolve(__dirname, "src"),
+                    require.resolve("bootstrap-vue")
+                ],
 				use: [{
-					loader: 'babel-loader',
+                    loader: 'babel-loader',
 					options: {
 						plugins: ['syntax-dynamic-import']
 					}

@@ -58,12 +58,21 @@ li {
   list-style: none;
 }
 .formDiv_2 {
-  overflow: hidden;
+  padding: 10px 0px;
+}
+.formDiv_2:before,
+.formDiv_2:after {
+  content: '';
+  display: table;
+}
+.formDiv_2:after {
+  clear: both;
 }
 .formDiv_2 .input-group {
   width: 50%;
-  float: left;
   padding: 0px 15px;
+  margin-bottom: 15px;
+  float: left;
 }
 .formDiv_3 {
   overflow: hidden;
@@ -72,6 +81,7 @@ li {
   width: 33.33%;
   float: left;
   padding: 0px 15px;
+  margin-bottom: 15px;
 }
 .formDiv_4 {
   overflow: hidden;
@@ -80,4 +90,5 @@ li {
   width: 25%;
   float: left;
   padding: 0px 15px;
+  margin-bottom: 15px;
 }

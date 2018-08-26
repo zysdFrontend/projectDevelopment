@@ -1,17 +1,10 @@
 <template>
-    <div :id="id" class="input-group datetimepicker" :class="['input-group-'+size,myClass]">
-        <span class="input-group-addon" :id="'label_'+id" v-text="label"></span>
-
-        <flat-pickr :config="defaultConfig" class="form-control" placeholder="请选择" :name="name" :value="value"></flat-pickr>
-
-        <span v-if="allowClear" class="input-group-btn">
-            <button class="btn btn-default" type="button" title="Clear" data-clear>
-                <i class="fa fa-trash-o">
-                    <span aria-hidden="true" class="sr-only">Clear</span>
-                </i>
-            </button>
-        </span>
-    </div>
+    <b-input-group class="datetimepicker-group" :prepend="label">
+        <flat-pickr ref="picker" :config="defaultConfig" class="form-control datetimepicker" placeholder="请选择" :name="name" :value="value"></flat-pickr>
+        <b-input-group-append v-if="allowClear">
+            <b-btn variant="secondary" title="clear" data-clear>×</b-btn>
+        </b-input-group-append>
+    </b-input-group>
 </template>
 
 <script>
@@ -26,7 +19,7 @@ export default {
         // 组件id
         id: {
             type: String,
-            default: 'combobox_' + util.getRandom(8)
+            default: 'datetimepicker_' + util.getRandom(8)
         },
         // 表单name
         name: {
@@ -52,16 +45,16 @@ export default {
             type: Boolean,
             default: true
         },
-        dateFormat: {
-            type: String,
-            default: 'Y-m-d'
-        },
         config: {
             type: Object,
             default: () => {}
         },
         value: {
             type: String
+        },
+        dateFormat: {
+            type: String,
+            default: 'Y-m-d'
         },
         minDate: {
             type: String,
@@ -127,8 +120,7 @@ export default {
 </script>
 
 <style lang="less">
-.datetimepicker{
-    margin-bottom: 15px;
+.datetimepicker-group{
     .form-control{
         background-color: #fff;
     }

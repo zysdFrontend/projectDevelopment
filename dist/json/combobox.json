@@ -1,19 +1,19 @@
 [{
-    "id": "1",
+    "value": "1",
     "text": "123"
 },{
-    "id": "2",
+    "value": "2",
     "text": "1123"
 },{
-    "id": "3",
+    "value": "3",
     "text": "abc"
 },{
-    "id": "4",
+    "value": "4",
     "text": "fgdgf"
 },{
-    "id": "5",
+    "value": "5",
     "text": "fhewe"
 },{
-    "id": "6",
+    "value": "6",
     "text": "sasdfasdf"
 }]

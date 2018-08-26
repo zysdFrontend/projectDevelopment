@@ -114,7 +114,7 @@ export default {
 	background-color: @gray;
 	.header{
         position: fixed;
-        z-index: 99999999;
+        z-index: 999;
 		width: 100%;
 		height: @topHeight;
 		top: 0px;
@@ -192,7 +192,7 @@ export default {
 	}
 	.leftMenus{
 		position: fixed;
-        z-index: 99999999;
+        z-index: 999;
 		background-color: @deepGray;
 		width: @leftWidth;
 		bottom: 0px;
