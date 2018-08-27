@@ -3,7 +3,8 @@
         <b-input-group-prepend>
             <slot name="prepend"></slot>
         </b-input-group-prepend>
-        <b-form-input :id="id" :name="name" :type="type"></b-form-input>
+        <b-form-input :id="id" :name="name" :type="type" v-validate="validate"></b-form-input>
+        <span class="errmsg" v-show="errors.has(name)">{{ errors.first(name) }}</span>
         <b-input-group-append>
             <slot name="append"></slot>
         </b-input-group-append>
@@ -54,23 +55,37 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .input-group{
-    .form-control{
-        border-radius: 0rem .25rem .25rem 0rem;
-    }
-    .errMsg{
+    // .form-control{
+    //     border-radius: 0rem .25rem .25rem 0rem;
+    // }
+    .errmsg{
         position: absolute;
         background-color: #d65b5b;
         height: 18px;
         line-height: 18px;
-        top: 100%;
+        top: 105%;
         left: 0px;
+        right: 0px;
         color: #fff;
         font-size: 13px;
-        width: 99%;
         padding: 0px 10px;
         z-index: 111;
+        border-radius: (3px);
+        &:after{
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            width:0; 
+            height:0; 
+            border-left:6px solid transparent;
+            border-right:6px solid transparent;
+            border-bottom:6px solid #d65b5b;
+        }
     }
 }
 </style>

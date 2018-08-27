@@ -1,5 +1,5 @@
 
-<checkbox label="苹果" name="fruit" value="apple"></checkbox>
-<checkbox label="芒果" name="fruit" value="mongo" :disabled="true"></checkbox>
-<checkbox label="香蕉" name="fruit" value="banana"></checkbox>
-<checkbox label="柠檬" name="fruit" value="lemon" :checked="true"></checkbox>
+<b-form-checkbox v-model="checkboxValue" value="apple" unchecked-value="">apple</b-form-checkbox>
+<b-form-checkbox v-model="checkboxValue2" value="banana" unchecked-value="">banana</b-form-checkbox>
+<b-form-checkbox v-model="checkboxValue3" value="orange" unchecked-value="">orange</b-form-checkbox>
+<p class="my-2">你的选择是：{{checkboxValue}}{{checkboxValue2}}{{checkboxValue3}}</p>

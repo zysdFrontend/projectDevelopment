@@ -1,4 +1,6 @@
 
-<combobox id="combobox_1" width="250px" :data="[{'id':'1','text':'1'},{'id':'2','text':'2'}]"></combobox>
-<combobox id="combobox_2" width="180px" :data="[{'id':'1','text':'1'},{'id':'2','text':'2'}]" :extend-option="{minimumResultsForSearch:1}"></combobox>
-<combobox id="combobox_3" width="180px" url="json/combobox.json" :extend-option="{minimumResultsForSearch:1}"></combobox>
+<combobox label="下拉框" :options="[{'value':'1','text':'1'},{'value':'2','text':'2'}]"></combobox>
+
+<combobox label="可搜索" :options="[{'value':'1','text':'1'},{'value':'2','text':'2'}]" :extend-option="{minimumResultsForSearch:1}"></combobox>
+
+<combobox label="远程加载数据" url="json/combobox.json" :extend-option="{minimumResultsForSearch:1}"></combobox>

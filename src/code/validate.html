@@ -1,3 +1,20 @@
 
-<textbox validate="email" name="email" my-class="col-xs-6" label="邮箱地址"></textbox>
-<textbox validate="numeric" name="numeric" my-class="col-xs-6" label="手机"></textbox>
+<textbox validate="required" name="required" label="必填项"></textbox>
+<br/>
+<textbox validate="email" name="email" label="邮箱地址"></textbox>
+<br/>
+<textbox validate="numeric" name="numeric" label="手机"></textbox>
+<br/>
+<textbox validate="ip" name="ip" label="ip"></textbox>
+<br/>
+<textbox validate="length:5" name="length" label="长度为5"></textbox>
+<br/>
+<textbox validate="max:5" name="max" label="长度小于5"></textbox>
+<br/>
+<textbox validate="min:5" name="min" label="长度大于5"></textbox>
+<br/>
+<textbox validate="max_value:9000" type="number" name="max_value" label="数额不超过9000"></textbox>
+<br/>
+<textbox validate="min_value:2000" type="number" name="min_value" label="数额大于2000"></textbox>
+<br/>
+<textbox validate="between:0,10" type="number" name="between" label="0到10之间"></textbox>

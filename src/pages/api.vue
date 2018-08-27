@@ -373,9 +373,19 @@
                     <h4>验证 - validate</h4>
                 </div>
                 <div class="example">
-                    <textbox validate="email" name="email" label="邮箱地址"></textbox>
-                    <br/>
-                    <textbox validate="numeric" name="numeric" label="手机"></textbox>
+                    <div class="formDiv_2">
+                        <textbox validate="required" name="required" label="必填项"></textbox>
+                        <textbox validate="email" name="email" label="邮箱地址"></textbox>
+                        <textbox validate="numeric" name="numeric" label="手机"></textbox>
+                        <textbox validate="ip" name="ip" label="ip"></textbox>
+                        <textbox validate="length:5" name="length" label="长度为5"></textbox>
+                        <textbox validate="max:5" name="max" label="长度小于5"></textbox>
+                        <textbox validate="min:5" name="min" label="长度大于5"></textbox>
+                        <textbox validate="max_value:9000" type="number" name="max_value" label="数额不超过9000"></textbox>
+                        <textbox validate="min_value:2000" type="number" name="min_value" label="数额大于2000"></textbox>
+                        <textbox validate="between:0,10" type="number" name="between" label="0到10之间"></textbox>
+                        <!-- <textbox validate="date_format:YYYY-MM-DD|date_between:2018-08-10,2018-08-20" type="number" name="betweendate" label="8月10日到8月20日之间"></textbox> -->
+                    </div>
                 </div>
                 <pre class="language-markup">
                         <code v-html="code_validate">
@@ -401,21 +411,23 @@
                     </pre>
             </div>
 
-            <div id="panel_treeselect" class="component_panel">
+            <div id="panel_combotree" class="component_panel">
                 <div class="title">
-                    <h4>下拉树 - treeselect</h4>
+                    <h4>下拉树 - combotree</h4>
                 </div>
                 <div class="example">
-                    <combotree label="下拉树" :options="treeselectOptions"></combotree>
+                    <combotree label="下拉树" :options="combotreeOptions"></combotree>
                     <br/>
-                    <combotree label="多选下拉树" :options="treeselectOptions" :multiple="true"></combotree>
-                    <!-- <p class="my-2">你的选择是：{{treeselectValue}}</p> -->
+                    <combotree label="多选下拉树" :options="combotreeOptions" :multiple="true"></combotree>
+                    <!-- <br/>
+                    <combotree label="远程加载" :loadOptions="combotreeLoadOptions"></combotree> -->
+                    <!-- <p class="my-2">你的选择是：{{combotreeValue}}</p> -->
                 </div>
                 <pre class="language-markup">
-                        <!-- <code v-html="code_treeselect">
-                            
-                        </code> -->
-                    </pre>
+                    <code v-html="code_combotree">
+                        
+                    </code>
+                </pre>
             </div>
         </div>
     </div>
@@ -437,6 +449,7 @@ import Code_tab from "./../code/tab.html";
 import Code_tooltip from "./../code/tooltip.html";
 import Code_tree from "./../code/tree.html";
 import Code_validate from "./../code/validate.html";
+import Code_combotree from "./../code/combotree.html";
 const Prism = require("prismjs");
 import "prismjs/themes/prism.css";
 
@@ -458,11 +471,12 @@ export default {
       code_tooltip: Code_tooltip,
       code_tree: Code_tree,
       code_validate: Code_validate,
+      code_combotree: Code_combotree,
       checkboxValue: '',
       checkboxValue2: '',
       checkboxValue3: '',
       radioValue: '',
-      treeselectValue: '',
+      combotreeValue: '',
       dropdownMenuOptions: [
         {
           name: "菜单一",
@@ -584,8 +598,8 @@ export default {
         },
         {
           id: "14",
-          name: "下拉树(treeselect)",
-          page: "treeselect"
+          name: "下拉树(combotree)",
+          page: "combotree"
         }
       ],
       naviData: [
@@ -602,7 +616,7 @@ export default {
           name: "我的项目"
         }
       ],
-      treeselectOptions: [ {
+      combotreeOptions: [ {
           id: 'a',
           label: 'a',
           children: [ {
@@ -615,6 +629,13 @@ export default {
         }, {
           id: 'b',
           label: 'b',
+          children: [ {
+            id: 'ba',
+            label: 'ba',
+          }, {
+            id: 'bb',
+            label: 'bb',
+          } ],
         }, {
           id: 'c',
           label: 'c',
@@ -633,6 +654,9 @@ export default {
       // 代码高亮
       const language = Prism.languages[lang] || Prism.languages.autoit;
       return Prism.highlight(sourceCode, language);
+    },
+    combotreeLoadOptions: function(){
+
     }
   },
   mounted: function() {

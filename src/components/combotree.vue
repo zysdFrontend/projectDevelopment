@@ -1,7 +1,7 @@
 <template>
     <b-input-group class="combotree-group" :prepend="label">
         <div class="form-control">
-            <treeselect :options="options" :name="name" :multiple="multiple"/>
+            <treeselect :options="options" :name="name" :multiple="multiple" :placeholder="placeholder"/>
         </div>
     </b-input-group>
 </template>
@@ -24,6 +24,9 @@ export default {
         options: {
             type: Array,
             default: () => []
+        },
+        loadOptions: {
+
         },
         multiple: {
             type: Boolean,
@@ -55,6 +58,11 @@ export default {
             display: inline-block;
             .vue-treeselect__control{
                 border: none;
+                .vue-treeselect__multi-value{
+                    .vue-treeselect__placeholder{
+                        line-height: 24px;
+                    }
+                }
             }
         }
     }

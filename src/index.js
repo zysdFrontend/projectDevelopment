@@ -2,8 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './router.config'
 
-import VeeValidate from 'vee-validate'
-import { Validator } from 'vee-validate'
+import VeeValidate,{ Validator } from 'vee-validate'
 import zh_CN from 'vee-validate/dist/locale/zh_CN'
 import validate_config from './validate.config'
 
@@ -43,10 +42,9 @@ const router = new VueRouter({
     linkActiveClass: 'active',
     routes: routes,
 });
-
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
-Validator.localize(zh_CN); // 设置提示信息中文方式显示
+Validator.localize('zh_CN', zh_CN); // 设置提示信息中文方式显示
 Vue.use(VeeValidate, validate_config);
 Vue.use(directives);
 

@@ -1,12 +1,58 @@
 
-<tab>
-    <tab-panel :active="true" name="home" title="首页">
-        <div>首页</div>
-    </tab-panel>
-    <tab-panel name="myProject" title="我的项目">
-        <div>我的项目</div>
-    </tab-panel>
-    <tab-panel name="projectCenter" title="项目中心">
-        <div>项目中心</div>
-    </tab-panel>
-</tab>
+<p>默认选项卡：</p>
+<b-tabs>
+    <b-tab title="页签1" active>
+        <p class="my-3">内容1</p>
+    </b-tab>
+    <b-tab title="页签2" >
+        <p class="my-3">内容2</p>
+    </b-tab>
+    <b-tab title="禁用页签" disabled>
+        <p class="my-3">内容3</p>
+    </b-tab>
+</b-tabs>
+<br><br>
+<p>卡片选项卡：</p>
+<b-card no-body>
+    <b-tabs card>
+        <b-tab title="页签1" active>
+            内容1
+        </b-tab>
+        <b-tab title="页签2" >
+            内容2
+        </b-tab>
+        <b-tab title="禁用页签" disabled>
+            内容3
+        </b-tab>
+    </b-tabs>
+</b-card>
+<br><br>
+<p>胶囊选项卡：</p>
+<b-card no-body>
+    <b-tabs pills card>
+        <b-tab title="页签1" active>
+            内容1
+        </b-tab>
+        <b-tab title="页签2" >
+            内容2
+        </b-tab>
+        <b-tab title="禁用页签" disabled>
+            内容3
+        </b-tab>
+    </b-tabs>
+</b-card>
+<br><br>
+<p>垂直选项卡：</p>
+<b-card no-body>
+    <b-tabs pills vertical small card>
+        <b-tab title="页签1" active>
+            内容1
+        </b-tab>
+        <b-tab title="页签2" >
+            内容2
+        </b-tab>
+        <b-tab title="禁用页签" disabled>
+            内容3
+        </b-tab>
+    </b-tabs>
+</b-card>

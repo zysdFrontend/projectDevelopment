@@ -1,6 +1,5 @@
 
-<a href="javascript:void(0)" v-tooltip title="悬停提示框内容...">鼠标移上去试试</a>
-<a href="javascript:void(0)" v-tooltip="{placement:'bottom'}" title="悬停提示框内容...">下方显示</a>
-<a href="javascript:void(0)" v-tooltip="{placement:'left'}" title="悬停提示框内容...">左侧显示</a>
-<a href="javascript:void(0)" v-tooltip="{placement:'right'}" title="悬停提示框内容...">右侧显示</a>
-<a href="javascript:void(0)" v-tooltip="{html:true}" title="<h1>123</h1><p>abc</p>">显示html内容</a>
+<b-btn v-b-tooltip.hover title="提示信息" variant="outline-primary">默认方位</b-btn>
+<b-btn v-b-tooltip.hover.right title="提示信息" variant="outline-primary">右侧方位</b-btn>
+<b-btn v-b-tooltip.hover.left title="提示信息" variant="outline-primary">左侧方位</b-btn>
+<b-btn v-b-tooltip.hover.bottom title="提示信息" variant="outline-primary">底部方位</b-btn>

@@ -1,35 +1,45 @@
 
-<my-button size="xs" text="超小按钮"></my-button>
-<my-button size="sm" text="小按钮"></my-button>
-<my-button text="默认尺寸按钮"></my-button>
-<my-button size="lg" text="大按钮"></my-button>
-
-<my-button :block="true" text="整栏按钮"></my-button>
-
-<my-button text="蓝色按钮" button-type="primary"></my-button>
-<my-button text="绿色按钮" button-type="success"></my-button>
-<my-button text="浅蓝色按钮" button-type="info"></my-button>
-<my-button text="黄色按钮" button-type="warning"></my-button>
-<my-button text="红色按钮" button-type="danger"></my-button>
-
-<my-button text="禁用按钮" button-type="primary" :disabled="true"></my-button>
-
-<button-group>
-    <my-button text="按钮1"></my-button>
-    <my-button text="按钮2"></my-button>
-    <my-button text="按钮3" button-type="primary"></my-button>
-    <my-button text="按钮4" button-type="success"></my-button>
-    <my-button text="按钮5" button-type="warning"></my-button>
-    <my-button text="按钮6" button-type="danger"></my-button>
-</button-group>
-
-<button-group>
-    <my-button text="按钮下拉菜单" dropdown="true"></my-button>
-    <ul class="dropdown-menu">
-        <li><a>菜单一</a></li>
-        <li><a>菜单二</a></li>
-        <li><a>菜单三</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a>菜单四</a></li>
-    </ul>
-</button-group>
+<b-btn variant="primary">primary</b-btn>
+<b-btn variant="secondary">secondary</b-btn>
+<b-btn variant="success">success</b-btn>
+<b-btn variant="warning">warning</b-btn>
+<b-btn variant="danger">danger</b-btn>
+<b-btn variant="info">info</b-btn>
+<b-btn variant="light">light</b-btn>
+<b-btn variant="dark">dark</b-btn>
+<br/><br/>
+<b-btn variant="outline-primary">primary</b-btn>
+<b-btn variant="outline-secondary">secondary</b-btn>
+<b-btn variant="outline-success">success</b-btn>
+<b-btn variant="outline-warning">warning</b-btn>
+<b-btn variant="outline-danger">danger</b-btn>
+<b-btn variant="outline-info">info</b-btn>
+<b-btn variant="outline-light">light</b-btn>
+<b-btn variant="outline-dark">dark</b-btn>
+<br/><br/>
+<b-btn variant="primary" size="sm">小型按钮</b-btn>
+<b-btn variant="primary" size="lg">大型按钮</b-btn>
+<b-btn variant="primary" disabled>禁用按钮</b-btn>
+<br/><br/>
+<b-btn variant="outline-secondary" block>通栏按钮</b-btn>
+<br/><br/>
+<b-dropdown right text="下拉按钮">
+    <b-dropdown-item>选项1</b-dropdown-item>
+    <b-dropdown-item>选项2</b-dropdown-item>
+    <b-dropdown-divider></b-dropdown-divider>
+    <b-dropdown-item>选项3</b-dropdown-item>
+</b-dropdown>
+<br/><br/>
+<b-button-group>
+    <b-button>按钮组1</b-button>
+    <b-button>按钮组2</b-button>
+    <b-button>按钮组3</b-button>
+    <b-button>按钮组4</b-button>
+    <b-button>按钮组5</b-button>
+</b-button-group>
+<br/><br/>
+<b-button-group vertical>
+    <b-button>垂直按钮组1</b-button>
+    <b-button>垂直按钮组2</b-button>
+    <b-button>垂直按钮组3</b-button>
+</b-button-group>

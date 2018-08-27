@@ -2,7 +2,7 @@
     <b-input-group class="datetimepicker-group" :prepend="label">
         <flat-pickr ref="picker" :config="defaultConfig" class="form-control datetimepicker" placeholder="请选择" :name="name" :value="value"></flat-pickr>
         <b-input-group-append v-if="allowClear">
-            <b-btn variant="secondary" title="clear" data-clear>×</b-btn>
+            <b-btn title="clear" data-clear>×</b-btn>
         </b-input-group-append>
     </b-input-group>
 </template>
@@ -123,6 +123,13 @@ export default {
 .datetimepicker-group{
     .form-control{
         background-color: #fff;
+    }
+    .input-group-append{
+        button[data-clear]{
+            background-color: #e9ecef;
+            border-color: #ced4da;
+            color: #495057;
+        }
     }
 }
 </style>

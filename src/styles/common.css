@@ -92,3 +92,7 @@ li {
   padding: 0px 15px;
   margin-bottom: 15px;
 }
+[class*='formDiv_'] .errmsg {
+  left: 15px;
+  right: 15px;
+}

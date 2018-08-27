@@ -1,15 +1,30 @@
 
-<my-button text="点击打开模态框" data-toggle="modal" data-target="#myModal"></my-button>
-
-<my-button text="点击打开远程加载模态框" data-toggle="modal" data-target="#myModal_2"></my-button>
-
-<my-button text="打开才加载内容" data-toggle="modal" data-target="#myModal_3"></my-button>
-<modal title="模态框" id="myModal" :buttons="modalButtons">
-    <p>阿萨德法师打发</p>
-    <p>阿萨德法师打发</p>
-    <p>阿萨德法师打发</p>
-    <p>阿萨德法师打发</p>
-    <p>阿萨德法师打发</p>
-</modal>
-<modal title="模态框2" id="myModal_2" :buttons="modalButtons" url="json/test.html"></modal>
-<modal title="模态框3" id="myModal_3" :buttons="modalButtons" url="json/test.html" :lazyload="true"></modal>
+<b-btn v-b-modal.modal1>打开模态框</b-btn>
+<b-modal id="modal1" title="标题">
+    <p class="my-4">Hello!</p>
+</b-modal>
+<br/>
+<b-btn v-b-modal.modal2>隐藏底部按钮的模态框</b-btn>
+<b-modal id="modal2" title="标题" hide-footer>
+    <p class="my-4">Hello!</p>
+</b-modal>
+<br/>
+<b-btn v-b-modal.modal3>小型模态框</b-btn>
+<b-modal id="modal3" title="标题" size="sm">
+    <p class="my-4">Hello!</p>
+</b-modal>
+<br/>
+<b-btn v-b-modal.modal4>大型模态框</b-btn>
+<b-modal id="modal4" title="标题" size="lg">
+    <p class="my-4">Hello!</p>
+</b-modal>
+<br/>
+<b-btn v-b-modal.modal4>居中模态框</b-btn>
+<b-modal id="modal4" title="标题" centered>
+    <p class="my-4">Hello!</p>
+</b-modal>
+<br/>
+<b-btn v-b-modal.modal5>懒加载模态框</b-btn>
+<b-modal id="modal5" title="标题" centered :lazy="true">
+    <p class="my-4">Hello!</p>
+</b-modal>

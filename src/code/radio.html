@@ -1,5 +1,7 @@
 
-<radio label="苹果" name="fruit" value="apple"></radio>
-<radio label="芒果" name="fruit" value="mongo" :disabled="true"></radio>
-<radio label="香蕉" name="fruit" value="banana"></radio>
-<radio label="柠檬" name="fruit" value="lemon" :checked="true"></radio>
+<b-form-radio-group v-model="radioValue" name="myRadio">
+    <b-form-radio value="apple">apple</b-form-radio>
+    <b-form-radio value="banana">banana</b-form-radio>
+    <b-form-radio value="orange">orange</b-form-radio>
+</b-form-radio-group>
+<p class="my-2">你的选择是：{{radioValue}}</p>
